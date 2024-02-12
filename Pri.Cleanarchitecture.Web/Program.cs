@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Pri.CleanArchitecture.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//Register database service
+builder.Services.AddDbContext<ApplicationDbContext>(options
+    => options
+    .UseSqlServer(builder.Configuration.GetConnectionString("DefaultDatabase")));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
