@@ -10,8 +10,8 @@ namespace Pri.CleanArchitecture.Core.Interfaces.Repositories
     public interface IPropertyRepository
     {
         Task<IEnumerable<Property>> GetAllAsync();
-        Task<Property> GetByIdAsync();
-        IQueryable<Property> GetAll(string search);
+        Task<Property> GetByIdAsync(int id);
+        IQueryable<Property> GetAll();
         Task<bool> CreateAsync(Property toAdd);
         Task<bool> UpdateAsync(Property toUpdate);
         Task<bool> DeleteAsync(Property toDelete);

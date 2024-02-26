@@ -11,7 +11,7 @@ namespace Pri.CleanArchitecture.Core.Interfaces.Repositories
     {
         Task<IEnumerable<Category>> GetAllAsync();
         Task<Category> GetByIdAsync();
-        IQueryable<Category> GetAll(string search);
+        IQueryable<Category> GetAll();
         Task<bool> CreateAsync(Category toAdd);
         Task<bool> UpdateAsync(Category toUpdate);
         Task<bool> DeleteAsync(Category toDelete);

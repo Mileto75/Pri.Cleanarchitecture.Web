@@ -47,6 +47,7 @@ namespace Pri.Cleanarchitecture.Web.Controllers
                     };
                 return View(productsDetailViewModel);
             }
+            Response.StatusCode = 404;
             return View("Error",result.Errors);
         }
     }
