@@ -48,7 +48,17 @@ namespace Pri.Cleanarchitecture.Web.Controllers
                 return View(productsDetailViewModel);
             }
             Response.StatusCode = 404;
-            return View("Error",result.Errors);
+            return View("Error",result.Errors); 
+        }
+        public async Task<IActionResult> Create()
+        {
+            var result = await _productService.CreateAsync
+                ("Pandoro",1,"very gooy dessert",9.00M,new List<int>() {10,2});
+            if(result.IsSuccess)
+            {
+                return RedirectToAction("Index");
+            }
+            return View("Error", result.Errors);
         }
     }
 }
