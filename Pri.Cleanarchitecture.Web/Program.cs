@@ -2,13 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using Pri.CleanArchitecture.Core.Interfaces.Repositories;
 using Pri.CleanArchitecture.Core.Interfaces.Services;
 using Pri.CleanArchitecture.Infrastructure.Data;
+using Pri.CleanArchitecture.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IProductRepository,IProductRepository>();
-builder.Services.AddScoped<ICategoryRepository,ICategoryRepository>();
-builder.Services.AddScoped<IPropertyRepository,IPropertyRepository>();
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
 builder.Services.AddScoped<IProductService,IProductService>();
 //Register database service
 builder.Services.AddDbContext<ApplicationDbContext>(options
