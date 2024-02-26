@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pri.CleanArchitecture.Core.Interfaces.Repositories
 {
-    public interface IProductRepository
+    public interface IProductRepository : IBaseRepository<Product>
     {
-        Task<IEnumerable<Product>> GetAllAsync();
-        Task<Product> GetByIdAsync(int id);
         Task<IEnumerable<Product>> GetByCategoryIdAsync(int categoryId);
-        IQueryable<Product> GetAll();
-        Task<bool> CreateAsync(Product toAdd);
-        Task<bool> UpdateAsync(Product toUpdate);
-        Task<bool> DeleteAsync(Product toDelete);
-
     }
 }

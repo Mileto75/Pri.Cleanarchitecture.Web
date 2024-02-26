@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pri.CleanArchitecture.Core.Interfaces.Repositories
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository : IBaseRepository<Category>
     {
-        Task<IEnumerable<Category>> GetAllAsync();
-        Task<Category> GetByIdAsync();
-        IQueryable<Category> GetAll();
-        Task<bool> CreateAsync(Category toAdd);
-        Task<bool> UpdateAsync(Category toUpdate);
-        Task<bool> DeleteAsync(Category toDelete);
+        
     }
 }
