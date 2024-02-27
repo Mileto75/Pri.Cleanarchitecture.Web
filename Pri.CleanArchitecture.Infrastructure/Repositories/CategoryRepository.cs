@@ -43,6 +43,11 @@ namespace Pri.CleanArchitecture.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<Category> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> UpdateAsync(Category toUpdate)
         {
             throw new NotImplementedException();
